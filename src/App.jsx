@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import * as Tone from 'tone'
+import { Button, Container } from '@mui/material';
+import SequencerDisplay from './components/SequencerDisplay'
+import LaunchPads from './components/LaunchPads';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  Tone.Transport.loop = true;
+  Tone.Transport.loopStart = 0;
+  Tone.Transport.loopEnd = "4m";
+  Tone.Transport.bpm.value = 120
+
+  Tone.start()
+
+  const tStart = async () => {
+    await Tone.start()
+    Tone.Transport.start()
+  }
+
+  const tStop = () => {
+    Tone.Transport.stop()
+    // setPosition(null)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Container maxWidth={'md'}>
+      <SequencerDisplay />
+      <Button variant='contained' onClick={tStart}>start</Button>
+      <Button variant='contained' onClick={tStop}>stop</Button>
+      <LaunchPads />
+    </Container>
   )
 }
 
