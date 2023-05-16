@@ -17,10 +17,10 @@ function Player({url, bpm}) {
         }).toDestination()
     )
 
-    const startPlayer = () => {
+    const startPlayer = async () => {
         if (!isPlayer) {
             if (Tone.Transport.state === 'stopped') {
-                Tone.start()
+                await Tone.start()
                 Tone.Transport.start();
             }
             setIsLoading(true)
@@ -39,17 +39,18 @@ function Player({url, bpm}) {
     return (
         <Box
             width={'100%'}
-            bgcolor={isPlayer ? 'primary.main' : 'grey'}
+            bgcolor={isPlayer ? 'primary.main' : 'primary.dark'}
             onClick={startPlayer}
             sx={{
+                cursor:'pointer',
                 aspectRatio:'1',
                 animation: isLoading
                     ? `brightnessLoop .5s linear infinite`
                     : 'none',
                 '@keyframes brightnessLoop': {
-                    '0%': { filter: 'brightness(100%)' },
-                    '50%': { filter: 'brightness(50%)' },
-                    '100%': { filter: 'brightness(100%)' },
+                    '0%': { filter: 'brightness(150%)' },
+                    '50%': { filter: 'brightness(100%)' },
+                    '100%': { filter: 'brightness(150%)' },
                 },
             }}
         />
