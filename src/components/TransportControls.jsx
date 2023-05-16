@@ -1,4 +1,4 @@
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, Slider } from '@mui/material';
 import * as Tone from 'tone'
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
@@ -19,18 +19,15 @@ function TransportControls() {
             case 'start':
                 Tone.Transport.pause()
                 setState('pause')
-                console.log('pause')
                 break;
             case 'pause':
                 Tone.Transport.start()
                 setState('start')
-                console.log('start')
                 break;
             case 'stop':
                 await Tone.start()
                 Tone.Transport.start()
                 setState('start')
-                console.log('start')
                 break;
             default:
                 break;
@@ -62,18 +59,31 @@ function TransportControls() {
     }, []);
 
 
+
     return (
         <Box mt={1}>
-            <IconButton onClick={tStartPause}>
-                {state !== 'start' ?
-                    <PlayArrowRoundedIcon />
-                    :
-                    <PauseRoundedIcon />
-                }
-            </IconButton>
-            <IconButton onClick={tStop}>
-                <StopRoundedIcon />
-            </IconButton>
+
+            <Box>
+                <IconButton onClick={tStartPause}>
+                    {state !== 'start' ?
+                        <PlayArrowRoundedIcon />
+                        :
+                        <PauseRoundedIcon />
+                    }
+                </IconButton>
+                <IconButton onClick={tStop}>
+                    <StopRoundedIcon />
+                </IconButton>
+            </Box>
+
+            <Box>
+                {/* <Slider
+                    aria-label="Volume"
+                    step={.1}
+                    min={-256}
+                    max={0}
+                /> */}
+            </Box>
         </Box>
     )
 }

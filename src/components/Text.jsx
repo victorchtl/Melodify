@@ -27,10 +27,10 @@ function Text() {
                 Get ready for an immersive musical experience that will help you understand the fascinating world of music
                 <br />
                 <br />
-                dive into a mesmerizing composition consisting of multiple instruments. Each instrument represents a unique player that you can control discover the enchanting harmony that arises when these instruments play in unison.
+                dive into a mesmerizing composition consisting of multiple instruments that you can control to discover the enchanting harmony that arises when playing in unison.
                 <br />
                 <br />
-                To provide a structured and engaging experience, the musical composition repeats itself every 4 measures where you can choose the instruments that will join the symphony.
+                To provide a structured and engaging experience, the musical composition repeats itself every 4 measures where you can choose the instrument(s) that will join the symphony.
                 <br />
                 <br />
                 Prepare yourself for an exciting adventure where you will discover the inner workings of music and witness the magic that unfolds when different instruments unite.
