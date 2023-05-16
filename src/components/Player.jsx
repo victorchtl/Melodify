@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { useRef, useState } from 'react'
 import * as Tone from 'tone'
 
-function Player({url, bpm}) {
+function Player({ url, bpm }) {
 
     const [isPlayer, setIsPlayer] = useState(false)
 
@@ -13,7 +13,7 @@ function Player({url, bpm}) {
         new Tone.Player({
             url: url,
             loop: true,
-            playbackRate: Tone.Transport.bpm.value / bpm,
+            // playbackRate: Tone.Transport.bpm.value / bpm,
         }).toDestination()
     )
 
@@ -39,13 +39,16 @@ function Player({url, bpm}) {
     return (
         <Box
             width={'100%'}
-            bgcolor={isPlayer ? 'primary.main' : 'primary.dark'}
+            bgcolor={isPlayer ? 'primary.main' : 'grey.900'}
             onClick={startPlayer}
             sx={{
-                cursor:'pointer',
-                aspectRatio:'1',
+                cursor: 'pointer',
+                aspectRatio: '1',
+                '&:hover':{
+                    filter: 'brightness(110%)'
+                },
                 animation: isLoading
-                    ? `brightnessLoop .5s linear infinite`
+                    ? `brightnessLoop .7s linear infinite`
                     : 'none',
                 '@keyframes brightnessLoop': {
                     '0%': { filter: 'brightness(150%)' },

@@ -4,6 +4,7 @@ import { Container } from '@mui/material';
 import SequencerDisplay from './components/SequencerDisplay'
 import LaunchPads from './components/LaunchPads';
 import TransportControls from './components/TransportControls';
+import Text from './components/Text';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <Container maxWidth={'md'}>
+      <Text />
       <SequencerDisplay />
       <LaunchPads />
       <TransportControls />

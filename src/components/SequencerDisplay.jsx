@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import { useEffect, useRef, useState } from 'react'
 import * as Tone from 'tone'
 
@@ -9,8 +9,6 @@ function SequencerDisplay() {
     const beat = new Array(16).fill('');
 
     const transportPositionRef = useRef(null);
-
-    const theme = useTheme()
 
     useEffect(() => {
 
@@ -41,8 +39,7 @@ function SequencerDisplay() {
     }, []);
 
     return (
-        <>
-            <Box display={'flex'}>
+            <Box display={'flex'} mb={2}>
                 {beat.map((b, index) => (
                     <Box
                         key={index}
@@ -53,14 +50,13 @@ function SequencerDisplay() {
                         m={1}
                         sx={{
                             boxShadow: position === index ?
-                                `0 0 8px 1px ${theme.palette.primary.main}`
+                                `none`
                                 :
                                 'rgba(0, 0, 0, 1) 1px 2px 1px 0px inset',
                         }}
                     />
                 ))}
             </Box>
-        </>
     )
 }
 

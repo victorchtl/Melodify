@@ -10,7 +10,7 @@ function TransportControls() {
     Tone.Transport.loop = true;
     Tone.Transport.loopStart = 0;
     Tone.Transport.loopEnd = "4m";
-    Tone.Transport.bpm.value = 120
+    Tone.Transport.bpm.value = 128
 
     const [state, setState] = useState('stop')
 
@@ -63,7 +63,7 @@ function TransportControls() {
 
 
     return (
-        <Box>
+        <Box mt={1}>
             <IconButton onClick={tStartPause}>
                 {state !== 'start' ?
                     <PlayArrowRoundedIcon />
