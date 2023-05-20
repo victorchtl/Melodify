@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import Player from './Player'
 import guitar from '../assets/guitar.wav'
 import synth from '../assets/synth.wav'
@@ -37,13 +37,15 @@ function LaunchPads() {
     ]
 
     return (
-        <Grid container spacing={1}>
-            {samples.map((sample, index) => (
-                <Grid item key={sample.name + index} xs={12/5}>
-                    <Player url={sample.url} bpm={sample.bpm} />
-                </Grid>
-            ))}
-        </Grid>
+        <Container sx={{ display: 'flex' }}>
+            <Grid container spacing={1}>
+                {samples.map((sample, index) => (
+                    <Grid item key={sample.name + index} xs={12 / 5}>
+                        <Player url={sample.url} bpm={sample.bpm} />
+                    </Grid>
+                ))}
+            </Grid>
+        </Container>
     )
 }
 

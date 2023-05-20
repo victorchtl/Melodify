@@ -2,8 +2,11 @@
 import { Box } from '@mui/material'
 import { useRef, useState } from 'react'
 import * as Tone from 'tone'
+import { useStore } from '../store'
 
 function Player({ url, bpm }) {
+
+    const volumeNode = useStore((state) => state.volumeNode)
 
     const [isPlayer, setIsPlayer] = useState(false)
 
@@ -14,7 +17,7 @@ function Player({ url, bpm }) {
             url: url,
             loop: true,
             // playbackRate: Tone.Transport.bpm.value / bpm,
-        }).toDestination()
+        }).connect(volumeNode)
     )
 
     const startPlayer = async () => {

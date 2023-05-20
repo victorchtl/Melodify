@@ -4,19 +4,21 @@ import { Container } from '@mui/material';
 import SequencerDisplay from './components/SequencerDisplay'
 import LaunchPads from './components/LaunchPads';
 import TransportControls from './components/TransportControls';
-import Text from './components/Text';
+import Landing from './pages/Landing';
+import Beat from './pages/Beat';
+import { useEffect } from 'react';
 
 
 function App() {
 
-  Tone.start()
-
   return (
-    <Container maxWidth={'md'}>
-      <Text />
+    <Container maxWidth={'xl'}>
+      <Landing />
+      <Beat />
+      {/* <Landing />
       <SequencerDisplay />
       <LaunchPads />
-      <TransportControls />
+      <TransportControls /> */}
     </Container>
   )
 }
