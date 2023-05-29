@@ -4,6 +4,10 @@ import './index.css'
 import { ThemeProvider } from '@emotion/react'
 import { CssBaseline, createTheme } from '@mui/material'
 import RobotoFlex from './fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import Beat from './pages/Beat.jsx'
+import Groove from './pages/Groove.jsx'
 
 const theme = createTheme({
   palette: {
@@ -11,8 +15,8 @@ const theme = createTheme({
     primary: {
       main: '#e7983f'
     },
-    secondary:{
-      main:'#121212'
+    secondary: {
+      main: '#121212'
     }
   },
   typography: {
@@ -23,11 +27,11 @@ const theme = createTheme({
     h2: {
       fontWeight: 700
     },
-    body1:{
+    body1: {
       fontSize: '.8rem',
       fontWeight: '100',
       letterSpacing: '.05rem',
-      lineHeight:'1.3rem'
+      lineHeight: '1.3rem'
     }
   },
   components: {
@@ -44,11 +48,32 @@ const theme = createTheme({
   },
 });
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/beat",
+        element: <Beat />,
+      },
+      {
+        path: "/groove",
+        element: <Groove />,
+      },
+    ],
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <RouterProvider router={router} />
+  </ThemeProvider>
   // </React.StrictMode>,
 )
