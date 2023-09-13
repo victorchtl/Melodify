@@ -22,11 +22,11 @@
 
 ## Images
 
-![alt text](https://github.com/victorchtl/melodify/blob/main/src/assets/screeshot/melodify_screenshot_01.png?raw=true)
+![alt text](https://github.com/victorchtl/melodify/blob/main/src/assets/screenshots/melodify_screeshot_01.png?raw=true)
 
-![alt text](https://github.com/victorchtl/melodify/blob/main/src/assets/screeshot/melodify_screenshot_02.png?raw=true)
+![alt text](https://github.com/victorchtl/melodify/blob/main/src/assets/screenshots/melodify_screeshot_02.png?raw=true)
 
-![alt text](https://github.com/victorchtl/melodify/blob/main/src/assets/screeshot/melodify_screenshot_03.png?raw=true)
+![alt text](https://github.com/victorchtl/melodify/blob/main/src/assets/screenshots/melodify_screeshot_03.png?raw=true)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
